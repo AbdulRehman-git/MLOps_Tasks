@@ -1,0 +1,17 @@
+# Use the official Python image
+FROM python:3.9
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the backend server script to the container
+COPY backend2.py /app/backend2.py
+
+# Install Flask
+RUN pip install Flask
+
+# Expose port 5001 for backend server 2
+EXPOSE 5001
+
+# Command to run backend server 2
+CMD ["python", "backend2.py"]

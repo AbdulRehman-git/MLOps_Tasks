@@ -1,0 +1,22 @@
+version: '3'
+services:
+  backend-server1:
+    build:
+      context: .
+      dockerfile: backend1_docker
+    ports:
+      - "5000:5000"
+
+  backend-server2:
+    build:
+      context: .
+      dockerfile: backend2_docker
+    ports:
+      - "5001:5001"
+
+  load-balancer:
+    build:
+      context: .
+      dockerfile: load_balance_docker
+    ports:
+      - "8080:8080"
